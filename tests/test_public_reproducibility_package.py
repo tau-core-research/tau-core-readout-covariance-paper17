@@ -27,6 +27,8 @@ def test_required_files_exist() -> None:
         "data/derived/taucore_v11_overall_summary.csv",
         "data/derived/taucore_v11_class_rates.csv",
         "data/derived/paper17_readout_covariance_summary.csv",
+        "figures/fig_v11_threshold_sweep.pdf",
+        "paper17_submission_source/figures/fig_v11_threshold_sweep.pdf",
         "source_package_manifest/MANIFEST.json",
     ]
     missing = [rel for rel in required if not (ROOT / rel).exists()]
@@ -53,6 +55,8 @@ def test_claim_boundaries_are_explicit() -> None:
         "not empirical",
         "not physical validation",
         "orientation is secondary",
+        "threshold-sweep",
+        "harder NullWorlds",
     ]:
         assert phrase in text
 
@@ -67,6 +71,11 @@ def test_v11_summary_values() -> None:
     assert abs(payload["tauworld_shared_parent_recovery"] - 1.0) < 1e-12
     assert abs(payload["nullworld_shared_parent_false_positive"] - 0.0) < 1e-12
     assert abs(payload["nullworld_orientation_only_rate"] - 0.22962962962962963) < 1e-12
+    assert payload["total_runs"] == 270
+    assert payload["tauworld_n"] == 135
+    assert payload["nullworld_n"] == 135
+    assert payload["unique_seed_count"] == 10
+    assert 0.027 < payload["nullworld_shared_parent_false_positive_ci95_high"] < 0.028
 
 
 def test_summary_csv_matches_manifest_claim() -> None:
@@ -79,6 +88,7 @@ def test_summary_csv_matches_manifest_claim() -> None:
     assert rows["tauworld_shared_parent_recovery"] == 1.0
     assert rows["nullworld_shared_parent_false_positive"] == 0.0
     assert rows["nullworld_orientation_only_rate"] > 0.0
+    assert rows["total_runs"] == 270
 
 
 def test_arxiv_zip_is_source_only() -> None:
@@ -88,3 +98,4 @@ def test_arxiv_zip_is_source_only() -> None:
     assert "refs.bib" in names
     assert "main.pdf" not in names
     assert "figures/fig_v11_class_rates.pdf" in names
+    assert "figures/fig_v11_threshold_sweep.pdf" in names

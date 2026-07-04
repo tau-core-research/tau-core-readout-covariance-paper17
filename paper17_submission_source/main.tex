@@ -47,13 +47,17 @@ axis, while morphology/orientation is only conditional reinforcement.  A signal
 with \(Z_{\rm orient}>2\) but \(Z_{\rm shared}\leq3\) is classified as
 orientation-only and is not Tau Core evidence.
 
-In the included v11 synthetic audit, all TauWorld runs recover the shared-parent
-axis, while the independent-parent NullWorld has zero shared-parent false
-positives.  The same NullWorld nevertheless exhibits orientation-only structure
-in \(22.963\%\) of cases.  This is the main methodological result: orientation
-can be visually or morphologically suggestive without being shared-parent
-evidence.  The package therefore supports a two-axis reporting standard for
-future lensing, galaxy, cosmic-web, and weak-signal Tau Core tests.
+The included v11 audit contains \(270\) synthetic runs, split evenly into
+\(135\) TauWorld and \(135\) NullWorld cases across ten seed values.  All
+TauWorld runs recover the shared-parent axis, while the independent-parent
+NullWorld has zero shared-parent false positives in this sample.  The same
+NullWorld nevertheless exhibits orientation-only structure in \(31/135\) cases,
+or \(22.963\%\).  The main methodological result is therefore not that TauWorld
+succeeds, since TauWorld is generated with a shared parent.  The result is that
+orientation can be visually or morphologically suggestive in null worlds
+without becoming shared-parent evidence.  The package therefore supports a
+two-axis reporting standard for future lensing, galaxy, cosmic-web, and
+weak-signal Tau Core tests.
 
 These numbers are synthetic audit statistics.  They are not \(p\)-values,
 likelihood ratios, real-data detections, or physical validation of Tau Core.
@@ -335,6 +339,16 @@ point is not that TauWorld succeeds; TauWorld was generated with a shared
 parent.  The point is that NullWorld has zero shared-parent false positives
 while still producing orientation-only cases.
 
+The compact v11 audit contains \(270\) synthetic runs: \(135\) TauWorld and
+\(135\) NullWorld cases, generated from ten distinct seed values
+\((11,\ldots,10055)\).  Using Wilson \(95\%\) binomial intervals, the
+TauWorld shared-parent recovery rate is \(135/135\), with interval
+\([0.972,1.000]\).  The NullWorld shared-parent false-positive rate is
+\(0/135\), with interval \([0.000,0.028]\).  The NullWorld orientation-only
+rate is \(31/135\), with interval \([0.167,0.307]\).  These intervals are
+audit uncertainty summaries for the synthetic package, not empirical
+confidence intervals for nature.
+
 \begin{table}[t]
 \centering
 \small
@@ -385,6 +399,18 @@ orientation-only class C.}
 upper-left region is the warning class: orientation-like structure without
 shared-parent support.}
 \label{fig:scatter}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/fig_v11_threshold_sweep.pdf}
+\caption{Threshold-sweep view of the v11 classifier.  The left panel varies
+the shared-parent threshold and reports TauWorld recovery versus NullWorld
+false positives.  The right panel varies the orientation threshold and shows
+why orientation is a useful but unsafe secondary axis: NullWorld can produce
+orientation-only support over a range of thresholds.  This figure is a
+threshold-sensitivity diagnostic, not a validation ROC curve on real data.}
+\label{fig:threshold-sweep}
 \end{figure}
 
 \section{Why orientation is secondary}
@@ -529,6 +555,8 @@ external source data.
 \item The covariance model is a toy covariance model.
 \item The thresholds \(Z_{\rm shared}=3\) and \(Z_{\rm orient}=2\) are synthetic
 audit thresholds, not universal constants.
+\item The present package reports a threshold-sweep diagnostic, but not a full
+ROC/PR validation suite with independent realistic mocks.
 \item No real survey covariance, no blind holdout survey, and no physical
 amplitude calibration are included.
 \end{enumerate}
@@ -539,7 +567,9 @@ scope.
 \section{Required v13 upgrade}
 
 The next meaningful upgrade is not a stronger claim.  It is a harder mock test.
-A v13 package should use:
+For Paper17-style evidence to move beyond the current toy world, a v13 package
+should be treated as a minimum scientific gate, not an optional polish step.  It
+should use:
 \begin{enumerate}[leftmargin=1.4em]
 \item clustered density fields;
 \item filament skeleton extraction;
@@ -550,6 +580,12 @@ A v13 package should use:
 \item galaxy bias;
 \item train/test split;
 \item independently generated null and shared-parent mock catalogues.
+\item threshold-free ROC/PR-style curves and explicit seed/split sensitivity;
+\item confidence intervals and failure-rate reporting for all headline rates;
+\item harder NullWorlds with common survey mask, common selection bias,
+foreground or systematics templates, common smoothing kernels, and partial
+parent-leakage controls;
+\item an independent implementation of the same frozen classifier.
 \end{enumerate}
 
 The v11 classifier should then be applied unchanged.  If the classifier only

@@ -30,13 +30,21 @@ morphology/orientation only as conditional reinforcement.
 The included v11 synthetic classifier reports:
 
 ```text
+Total v11 runs:                         270
+TauWorld / NullWorld split:             135 / 135
+Unique seeds:                           10
 TauWorld shared-parent recovery:       100%
-NullWorld shared-parent false positive: 0%
-NullWorld orientation-only rate:        22.963%
+NullWorld shared-parent false positive: 0%      (0/135; Wilson 95% upper ~2.8%)
+NullWorld orientation-only rate:        22.963% (31/135)
 ```
 
 Orientation-only structure can appear in null worlds, so orientation is not
 allowed to count as Tau Core evidence by itself.
+
+The important methodological point is not that TauWorld succeeds; TauWorld is
+generated with a shared parent.  The important point is that NullWorld can show
+orientation-only structure while the shared-parent covariance axis remains
+clean in this synthetic audit.
 
 ## Does Not Claim
 
@@ -80,6 +88,22 @@ Paper 17 is a synthetic methodology paper.  It supports the protocol-level
 lesson that shared-parent covariance is a stronger evidence axis than
 orientation-only structure.  It is not a physical or empirical validation
 paper.
+
+## Required Next Gate
+
+A stronger Paper17/v13 package should be treated as mandatory before any
+real-data-facing promotion:
+
+- threshold-free ROC/PR-style reporting, not only fixed `Z_shared=3` and
+  `Z_orient=2` cuts;
+- seed/split sensitivity, confidence intervals, and explicit failure rates;
+- harder NullWorlds with shared survey mask, shared selection bias, foreground
+  or systematics templates, common smoothing kernels, and partial parent
+  leakage controls;
+- realistic mock catalogues with clustered density fields, filament skeleton
+  extraction, lensing-like projection, survey mask, photo-z noise, shape noise,
+  galaxy bias, and held-out split;
+- independent implementation of the same frozen classifier.
 
 Claim marker: synthetic methodology only; not empirical validation; not physical validation.
 

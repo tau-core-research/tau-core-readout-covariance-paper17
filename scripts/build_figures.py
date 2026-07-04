@@ -143,11 +143,61 @@ def build_condition_heatmap() -> None:
     save(fig, "fig_tauworld_condition_heatmap.pdf")
 
 
+def build_threshold_sweep_figure() -> None:
+    audit = pd.read_csv(DERIVED / "taucore_v11_two_axis_classifier_audit.csv")
+    tau = audit[audit["is_tau_world"] == True]  # noqa: E712
+    null = audit[audit["is_tau_world"] == False]  # noqa: E712
+
+    shared_thresholds = np.linspace(
+        min(audit["z_shared"].min(), 0.0),
+        max(audit["z_shared"].max(), 8.0),
+        120,
+    )
+    orient_thresholds = np.linspace(
+        min(audit["z_orient"].min(), 0.0),
+        max(audit["z_orient"].max(), 6.0),
+        120,
+    )
+
+    shared_tau = [(tau["z_shared"] > t).mean() for t in shared_thresholds]
+    shared_null = [(null["z_shared"] > t).mean() for t in shared_thresholds]
+    orient_tau = [(tau["z_orient"] > t).mean() for t in orient_thresholds]
+    orient_null = [(null["z_orient"] > t).mean() for t in orient_thresholds]
+
+    fig, axes = plt.subplots(1, 2, figsize=(11.2, 4.8))
+
+    ax = axes[0]
+    ax.plot(shared_thresholds, shared_tau, label="TauWorld recovery", color="#2374ab", lw=2)
+    ax.plot(shared_thresholds, shared_null, label="NullWorld false positive", color="#b45f5f", lw=2)
+    ax.axvline(3.0, color="black", lw=1.0, ls="--")
+    ax.set_xlabel("$Z_{shared}$ threshold")
+    ax.set_ylabel("fraction above threshold")
+    ax.set_ylim(-0.03, 1.03)
+    ax.set_title("Shared-parent threshold sweep")
+    ax.legend(frameon=False, fontsize=8)
+    ax.grid(alpha=0.25)
+
+    ax = axes[1]
+    ax.plot(orient_thresholds, orient_tau, label="TauWorld orientation rate", color="#59a14f", lw=2)
+    ax.plot(orient_thresholds, orient_null, label="NullWorld orientation-only trap", color="#f28e2b", lw=2)
+    ax.axvline(2.0, color="black", lw=1.0, ls="--")
+    ax.set_xlabel("$Z_{orient}$ threshold")
+    ax.set_ylabel("fraction above threshold")
+    ax.set_ylim(-0.03, 1.03)
+    ax.set_title("Orientation threshold sweep")
+    ax.legend(frameon=False, fontsize=8)
+    ax.grid(alpha=0.25)
+
+    fig.suptitle("Threshold-sweep view of the v11 classifier", y=1.03)
+    save(fig, "fig_v11_threshold_sweep.pdf")
+
+
 def main() -> None:
     build_protocol_figure()
     build_class_rate_figure()
     build_scatter_figure()
     build_condition_heatmap()
+    build_threshold_sweep_figure()
     print("PAPER17_FIGURES_BUILT")
 
 
