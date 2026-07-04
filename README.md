@@ -114,3 +114,7 @@ Claim marker: synthetic methodology only; not empirical validation; not physical
 - Paper 17 supplies the explicit two-axis covariance classifier that explains
   why shared-parent support and morphology/orientation support must be reported
   separately.
+- Paper 18 supplies a photon-lensing MAR template,
+  `T_tau = B_env A_f M_bf`. Paper 17 is the guardrail for that template:
+  a MAR correlation should be reported as morphology/orientation support unless
+  it also survives the `Z_shared` common-parent covariance axis.

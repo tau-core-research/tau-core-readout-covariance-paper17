@@ -115,3 +115,17 @@ Only A and B are Tau Core candidate classes.
 C is a warning class, because orientation-like structure can occur in null worlds.
 
 D is null.
+
+## 8. Paper 18 MAR template as an input to this protocol
+
+Paper 18 supplies a concrete source-side photon-lensing morphology template:
+
+```math
+T_\tau = B_{\rm env} A_f M_{bf}, \qquad
+M_{bf}=1-(\hat b\cdot\hat f)^2.
+```
+
+Within this classifier, a MAR correlation is initially a morphology/orientation
+handle.  It may reinforce a candidate only when the same source-frozen route
+also produces shared-parent covariance support.  Otherwise it remains class C:
+orientation-like only.
