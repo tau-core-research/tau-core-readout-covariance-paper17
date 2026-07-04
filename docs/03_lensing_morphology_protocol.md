@@ -125,7 +125,8 @@ T_\tau = B_{\rm env} A_f M_{bf}, \qquad
 M_{bf}=1-(\hat b\cdot\hat f)^2.
 ```
 
-Within this classifier, a MAR correlation is initially a morphology/orientation
-handle.  It may reinforce a candidate only when the same source-frozen route
-also produces shared-parent covariance support.  Otherwise it remains class C:
-orientation-like only.
+Paper 18 v2 also records out-of-sample scale checks, physical flat-sky shear
+mocks, and a toy Null-Matter Link diagnostic.  Within this classifier, all of
+these remain initially morphology/orientation handles.  They may reinforce a
+candidate only when the same source-frozen route also produces shared-parent
+covariance support.  Otherwise they remain class C: orientation-like only.

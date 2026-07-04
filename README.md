@@ -115,6 +115,8 @@ Claim marker: synthetic methodology only; not empirical validation; not physical
   why shared-parent support and morphology/orientation support must be reported
   separately.
 - Paper 18 supplies a photon-lensing MAR template,
-  `T_tau = B_env A_f M_bf`. Paper 17 is the guardrail for that template:
-  a MAR correlation should be reported as morphology/orientation support unless
-  it also survives the `Z_shared` common-parent covariance axis.
+  `T_tau = B_env A_f M_bf`, and in v2 extends it to out-of-sample scale
+  validation, physical shear mocks, and a toy Null-Matter Link diagnostic.
+  Paper 17 is the guardrail for that template family: MAR/shear/null-matter
+  correlations should be reported as morphology/orientation support unless
+  they also survive the `Z_shared` common-parent covariance axis.
