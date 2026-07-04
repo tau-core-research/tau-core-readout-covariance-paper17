@@ -1,0 +1,15 @@
+{
+  "package": "taucore_readout_covariance_package",
+  "created_utc": "2026-07-03T16:36:00.755342Z",
+  "status": "synthetic validation and formalization package; not empirical proof",
+  "main_claim": "Tau Core should be tested as a multi-axis readout-covariance programme; shared-parent covariance is primary and morphology/orientation is secondary.",
+  "key_results": {
+    "v8_shared_parent_detector": "KEEP",
+    "v9_matched_filter_anisotropy": "REJECT",
+    "v10_orientation_diagnostic": "SECONDARY_ONLY",
+    "v11_two_axis_classifier": "KEEP",
+    "tauworld_shared_parent_recovery": "100% in v11 merged synthetic audit",
+    "nullworld_shared_parent_false_positive": "0% in v11 merged synthetic audit"
+  },
+  "files_missing_during_packaging": []
+}

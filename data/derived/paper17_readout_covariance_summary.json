@@ -1,0 +1,11 @@
+{
+  "claim_boundary": "synthetic_methodology_not_empirical_validation",
+  "nullworld_mean_z_orient": 1.0203020918368215,
+  "nullworld_mean_z_shared": 0.2667801578737381,
+  "nullworld_orientation_only_rate": 0.2296296296296296,
+  "nullworld_shared_parent_false_positive": 0.0,
+  "tauworld_mean_z_orient": 2.400625437251083,
+  "tauworld_mean_z_shared": 6.553263637718042,
+  "tauworld_orientation_detection": 0.4888888888888889,
+  "tauworld_shared_parent_recovery": 1.0
+}
