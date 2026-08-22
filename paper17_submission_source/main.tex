@@ -23,7 +23,7 @@
 \title{\textbf{A Readout-Covariance Classifier for Shared-Parent Tau Core Signals}\\
 \large Synthetic Methodology, Two-Axis Evidence Hierarchy, and Lensing--Morphology Protocol}
 \author{Tau Core Research}
-\date{Paper 17 draft package, 2026}
+\date{Paper 17 draft package, 2026\\Last revised: 2026-08-22}
 
 \begin{document}
 \maketitle
@@ -175,36 +175,64 @@ This is the readout-positivity principle used in the package.  It is a
 synthetic admissibility rule, not a proof that the physical universe has an
 indefinite parent metric.
 
+\subsection{Source-owned transport before residual channels}
+
+The transport in the covariance model is not a freely inferred terminal
+operator. The finite root-action groupoid in the current minimal source
+packet has zero continuous tangent, so it cannot generate a nontrivial smooth
+transport by itself. A smooth non-scalar transport is therefore conditional
+on one of two source-owned mechanisms:
+\[
+  U_{\Gamma}^{(B)}=
+  \mathcal P\exp\!\left(-\int_{\Gamma}\mathcal A_B\right),
+  \qquad
+  \mathcal A_K=[dP_O,P_O],
+  \qquad
+  U_{\Gamma}^{(K)}=
+  \mathcal P\exp\!\left(-\int_{\Gamma}\mathcal A_K\right).
+\]
+Here \(\mathcal A_B\) is an independently sourced full body connection and
+\(P_O\) is a varying, constant-rank, source-owned access projector. Scalar
+\(U(1)\) transport can retain phase or clock holonomy but is projectively
+invisible to normalized non-scalar optical orientation. For direct full-rank
+access, \(P_O=I\) and the Kato generator is zero. The synthetic model below
+supplies a transport only to test covariance classification; it does not prove
+physical occupation of either source mechanism.
+
 \subsection{Residual channels}
 
 For channel \(i\), a residual is modeled as
 \[
-  \delta_i(t)
+  \delta_i(\lambda)
   =
-  M_i\Pi_iU_{\tau}(t)\delta\Psi_{\tau}(0)+n_i(t),
+  M_i\Pi_iU_{\tau,\Gamma}(\lambda)\delta\Psi_{\tau}(0)+n_i(\lambda),
   \label{eq:channel-residual}
 \]
-where \(M_i\) is a response or measurement operator, \(U_{\tau}(t)\) is parent
-transport, \(\delta\Psi_{\tau}(0)\) is a parent perturbation, and \(n_i(t)\)
-collects channel noise and systematics.
+where \(M_i\) is a response or measurement operator,
+\(U_{\tau,\Gamma}(\lambda)\) is a supplied source-path transport along an
+ordered parameter \(\lambda\), \(\delta\Psi_{\tau}(0)\) is a parent
+perturbation, and \(n_i(\lambda)\) collects channel noise and systematics.
+The parameter \(\lambda\) is not asserted to be an external parent time.
 
 The predicted cross-readout covariance is
 \[
   \boxed{
-  {\rm Cov}_{ij}(t,t')
+  {\rm Cov}_{ij}(\lambda,\lambda')
   =
-  M_i\Pi_iU_{\tau}(t)
+  M_i\Pi_iU_{\tau,\Gamma}(\lambda)
   \Sigma_{\tau}
-  U_{\tau}^{\dagger}(t')
+  U_{\tau,\Gamma}^{\dagger}(\lambda')
   \Pi_j^{\dagger}M_j^{\dagger}
   +
-  N_{ij}(t,t').
+  N_{ij}(\lambda,\lambda').
   }
   \label{eq:cross-readout-covariance}
 \]
-This is the central empirical target of the package.  A Tau Core candidate is
+This is the central empirical target of the package. A Tau Core candidate is
 not a single nonzero residual; it is structured covariance between readout
-residuals after null, noise, source-overlap, and systematics controls.
+residuals after null, noise, source-overlap, and systematics controls. Even
+then, covariance supports at most a common-cause candidate; it does not
+identify \(U_{\tau,\Gamma}\), \(\mathcal A_B\), or \(P_O\).
 
 \section{Evidence hierarchy}
 

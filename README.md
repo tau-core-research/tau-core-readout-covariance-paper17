@@ -55,6 +55,17 @@ clean in this synthetic audit.
 - It does not claim that morphology/orientation is sufficient evidence.
 - It does not claim empirical discovery or physical validation.
 
+## Source-Transport Boundary
+
+The synthetic covariance model is evaluated under a supplied transport. It
+does not infer a physical transport from covariance. Current Tau Core source
+accounting allows smooth non-scalar transport only conditionally through full
+body-connection holonomy or Kato transport `[dP_O,P_O]` of a varying,
+constant-rank, source-owned access projector. The manuscript therefore uses an
+ordered source-path parameter rather than an external parent time, and treats
+covariance as common-cause candidate evidence rather than connection
+identification.
+
 ## Included Data
 
 The repository includes compact synthetic CSV tables under `data/derived/`,
