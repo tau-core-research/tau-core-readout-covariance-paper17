@@ -4,6 +4,7 @@ message: "If you use this package, cite the repository and manuscript."
 type: software
 authors:
   - name: "Tau Core Research"
-date-released: 2026-07-04
+date-released: "2026-08-22"
+version: "v0.1.0"
 repository-code: "https://github.com/tau-core-research/tau-core-readout-covariance-paper17"
 license: MIT
