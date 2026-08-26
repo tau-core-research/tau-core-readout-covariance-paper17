@@ -72,6 +72,16 @@ The repository includes compact synthetic CSV tables under `data/derived/`,
 source-package provenance under `source_package_manifest/`, and two source
 scripts under `code/`.
 
+## Physical Full-4D Score Contract
+
+Paper 17 now records the empirical scoring contract inherited from the
+full-4D descent. A real prediction must be the stacked terminal image of one
+source-frozen `E_g`, with exact duplicate directions removed and all remaining
+cross-terminal covariance retained. After declared whitening/projection, the
+fixed score is `S_G4D = 2 Re<r,m> - ||m||^2`. The current
+`(Z_shared,Z_orient)` classifier is a synthetic covariance diagnostic and is
+not this physical score.
+
 ## Reproduce
 
 ```bash

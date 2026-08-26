@@ -23,7 +23,7 @@
 \title{\textbf{A Readout-Covariance Classifier for Shared-Parent Tau Core Signals}\\
 \large Synthetic Methodology, Two-Axis Evidence Hierarchy, and Lensing--Morphology Protocol}
 \author{Tau Core Research}
-\date{Paper 17 draft package, 2026\\Last revised: 2026-08-22}
+\date{Paper 17 draft package, 2026\\Last revised: 2026-08-26}
 
 \begin{document}
 \maketitle
@@ -128,6 +128,20 @@ denote a parent state package, where \(\mathcal{P}_{\tau}\) is the parent state
 space, \(\eta_{\tau}\) is a parent pairing, \(H_{\tau}\) is a parent generator,
 \(\mathcal{A}_{\tau}\) is a parent observable algebra, and
 \(\Sigma_{\tau}\) is a parent perturbation covariance.
+
+For comparison with the foundation-level readout architecture, a physical
+terminal family would have the form
+\[
+ \mathfrak R_{OS}
+ =
+ \left\langle Q_{OS}^{(a)}\circ T_{OS}^{(a)}\right\rangle_a
+ \circ\Xi_{OS}.
+\]
+The synthetic projectors below instantiate a shared-parent control model; they
+do not derive the source-owned \(\Xi_{OS}\), prove fibre constancy for every
+physical terminal, or establish Nature-wide no-bypass.  Shared covariance can
+support a predeclared common-source comparator, but covariance alone cannot
+identify the common ancestor or its physical occupation.
 
 The package intentionally allows parent-level indefiniteness.  A toy parent
 pairing can be
@@ -481,6 +495,36 @@ Orientation reinforcement is condition-dependent; the shared-parent axis is the
 primary support axis.}
 \label{fig:heatmap}
 \end{figure}
+
+\section{Exact fixed score for a frozen full-4D candidate}
+
+The covariance classifier above is a synthetic evidence hierarchy, not the
+likelihood score of a physical Tau metric candidate.  If a future source
+packet independently fixes a full-4D standard-excess metric \(E_g\), its one
+joint prediction is
+\[
+ \mu_\tau=\bigoplus_a\mathcal T_a[E_g].
+\]
+Exact linear duplicates must first be quotiented; all remaining
+cross-terminal covariance blocks are retained.  For a held-out joint data
+vector \(Y\), frozen standard prediction \(Y_0\), covariance \(\Sigma\) and
+nuisance design \(N\), let \(P_\perp\) be the orthogonal projector after
+covariance whitening and define
+\[
+ r=P_\perp\Sigma^{-1/2}(Y-Y_0),\qquad
+ m=P_\perp\Sigma^{-1/2}\mu_\tau.
+\]
+The fixed-hypothesis Gaussian score is then
+\begin{equation}
+ \boxed{S_{\rm G4D}=2\operatorname{Re}\langle r,m\rangle-\|m\|^2
+ =\chi_0^2-\chi_\tau^2.}
+ \label{eq:paper17-g4d-fixed-score}
+\end{equation}
+This score contains no fitted Tau amplitude or terminal weight.  It may be
+used only when the underlying source packet, standard comparator, terminal
+maps, covariance, nuisance space and holdout are frozen before endpoint
+access.  The present \((Z_{\rm shared},Z_{\rm orient})\) classifier does not
+satisfy those physical-input conditions and remains a synthetic method demo.
 
 \section{Claim-safe real-data protocol}
 
