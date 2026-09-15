@@ -141,3 +141,23 @@ Claim marker: synthetic methodology only; not empirical validation; not physical
   Paper 17 is the guardrail for that template family: MAR/shear/null-matter
   correlations should be reported as morphology/orientation support unless
   they also survive the `Z_shared` common-parent covariance axis.
+
+<!-- BEGIN OBSERVER UPDATE 20260914 -->
+## Observer realization update (2026-09-14)
+
+Different terminal labels are not independent information sources without a factorization or novelty proof. A nonzero correlation is not automatically a standard-orthogonal Tau signal.
+
+The manuscript distinguishes inherited BRAC contact, conditional coherent-state
+selection and interacting local covariance from physical observer identification,
+preparation and stable resolution. Those physical claims remain open. No
+empirical score was changed. The [dependency and source-result ledger](data/derived/observer_update_2026_09_14.json) records the assumptions and controls.
+<!-- END OBSERVER UPDATE 20260914 -->
+
+<!-- BEGIN LAB UPDATE 20260915 -->
+## Finite lab integration (2026-09-15)
+
+The manuscript imports the scope-specific source, body, observer or terminal
+result from the current lab. Supplied priors, conditional recovery and physical
+selection remain separate. No SI constant, viable universe or Tau-specific
+signal is newly established. See the [source and ownership ledger](data/derived/lab_update_2026_09_15.json).
+<!-- END LAB UPDATE 20260915 -->

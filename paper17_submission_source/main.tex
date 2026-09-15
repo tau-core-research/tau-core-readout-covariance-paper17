@@ -248,6 +248,40 @@ residuals after null, noise, source-overlap, and systematics controls. Even
 then, covariance supports at most a common-cause candidate; it does not
 identify \(U_{\tau,\Gamma}\), \(\mathcal A_B\), or \(P_O\).
 
+\subsection{Marginal posteriors do not identify cross-readout covariance}
+
+Let $X$ and $Y$ denote transformed terminal parameters with known marginal
+distributions.  Those marginals determine neither one physical covariance nor
+one joint posterior.  Over all admissible couplings, the sharp rearrangement
+bounds are
+\begin{equation}
+ \int_0^1 F_X^{-1}(u)F_Y^{-1}(1-u)\,du-\mu_X\mu_Y
+ \leq \operatorname{Cov}(X,Y)
+ \leq
+ \int_0^1 F_X^{-1}(u)F_Y^{-1}(u)\,du-\mu_X\mu_Y.
+ \label{eq:paper17-frechet-covariance-bounds}
+\end{equation}
+The independent coupling gives zero covariance between these bounds.  Rank
+matching, nearest-neighbour pairing or optimal transport applied after release
+therefore selects a coupling model; it does not reconstruct the experiment's
+joint likelihood.
+
+If both terminals arise from a common latent source $Z$, the target must
+instead be declared through
+\begin{equation}
+ \operatorname{Cov}(X,Y)
+ =\operatorname{Cov}_Z\!\left(\mathbb E[X\mid Z],
+                              \mathbb E[Y\mid Z]\right)
+ +\mathbb E_Z[\operatorname{Cov}(X,Y\mid Z)].
+ \label{eq:paper17-total-covariance}
+\end{equation}
+One common latent posterior and the conditional cross-analysis residual
+covariance are therefore required for a point estimate.  A concrete
+GW250114 audit gives a wide admissible interval for logarithmic mode-ratio
+covariance, approximately $[-0.09756,0.10285]$, from the two released
+marginals.  This is an identifiability control, not a gravitational anomaly
+or a Tau signal.
+
 \section{Evidence hierarchy}
 
 The paper uses the following hierarchy.
@@ -638,6 +672,9 @@ audit thresholds, not universal constants.
 ROC/PR validation suite with independent realistic mocks.
 \item No real survey covariance, no blind holdout survey, and no physical
 amplitude calibration are included.
+\item Separately released marginal posteriors cannot be paired post hoc to
+recover a physical cross-readout covariance; a common latent likelihood or
+common-event packet is required.
 \end{enumerate}
 
 These limitations do not invalidate the methodological result.  They define its
@@ -692,6 +729,58 @@ The original package manifest and README are preserved under
 The reproduction package intentionally excludes broad private workbench logs and
 does not include real survey products.
 
+% BEGIN OBSERVER UPDATE 20260914
+\section{Observer realization: inherited results and physical boundary}
+\label{sec:observer-update-20260914}
+The current observer programme distinguishes a conditional mathematical
+construction from an occupied physical measuring system. The source order
+remains base plus one universal seed, stabilized morphological response,
+observer--source restriction, shared descriptor, and resolved terminal
+readouts. Neither a detector nor an empirical residual constructs the parent
+body backwards. Dynamics below concern downstream subsystems only.
+
+The canonical observer-origin derivation, Sections 22--26, owns the following
+results. The existing joint source action fixes static and frequency-dependent
+response together. Variation of the BRAC potential couples to the field
+square; a linear field coupling is a distinct comparator unless derived by
+expansion about an occupied background. Fixed canonical means select a unique
+coherent state in a finite positive harmonic packet only if there is no excess
+fluctuation energy. This is a free/asymptotic preparation statement, not the
+ground state of an interacting detector. For the existing coupled harmonic
+pair, the joint ground is pure but either local subsystem is mixed, with its
+covariance fixed by the complete joint Hamiltonian.
+
+These are conditional derivations and internal numerical checks. The actual
+observer--source context, physical preparation process, kinetic/energy
+calibration and stable operational resolution remain unproved. The existing
+ORA-T1 selector conditionally chooses stable quantizers when the occupied
+context, admissible partition family and positive closure barrier are supplied;
+it does not establish those physical premises. A computed ground state is not
+a preparation mechanism, and a covariance or optimal abstract measurement is
+not an implemented stable quantizer $Q_{OS}$.
+
+\paragraph{Ownership and use.}
+The central observer-origin note owns the new contact, state and covariance
+derivations; the body-readout technical companion carries the consolidated
+mathematics. Foundation Papers IV, V and VI retain physical-selection,
+clock-descent and quantum-readout ownership, respectively. This paper imports
+only the consequences within its scope. No observational dataset, baseline,
+frozen coefficient, score or empirical conclusion is revised by this update.
+The reproducibility supplement records the source hashes and the exact
+conditional/physical distinction.
+
+
+\paragraph{Consequence for this paper.}
+Different terminal labels are not independent information sources without a factorization or novelty proof. A nonzero correlation is not automatically a standard-orthogonal Tau signal.
+% END OBSERVER UPDATE 20260914
+
+% BEGIN LAB UPDATE 20260915
+\section{Finite source-to-readout implementation and its scope}
+The current finite laboratory is a reproducible implementation, not a new Nature-selection theorem. The finite observer response is solved only after the body and Hessian are frozen. Its access matrix, susceptibility, noise and stable cell partition remain explicit inputs. A historical joint instrument calibration constrains that supplied adapter, not the physical seed or universal terminal decomposition. The frozen-load transfer must not be confused with the total derivative through body stabilization.
+\paragraph{Ownership and reproducibility.}
+The seed--body companion owns the finite minimum/Hessian example, the body--readout companion its ordered access and contact reduction, and the terminal companion its conditional propagation boundary. The physical-source papers retain the source-selection obligation. Code, declared priors, adverse controls and provenance are available at \url{https://github.com/tau-core-research/tau-core-theory/tree/main/experiments/seed_evolution_lab}. Numerical tests are internal evidence only; no published empirical score is changed.
+% END LAB UPDATE 20260915
+
 \section{Conclusion}
 
 Paper 17 records a synthetic readout-covariance classifier for Tau Core
@@ -713,6 +802,7 @@ likely to overread morphology-like agreement.  It does not validate Tau Core,
 does not identify the parent field, and does not close the physical response
 operator problem.  The next scientific step is a realistic mock-catalog
 injection test with the same two-axis classifier frozen in advance.
+
 
 \bibliographystyle{plain}
 \bibliography{refs}
