@@ -85,6 +85,8 @@ def run_classifier(v8_csv, v10_csv, output_dir):
         class_D_rate=("class", lambda s: np.mean(s == "D_null")),
         mean_z_shared=("z_shared", "mean"),
         mean_z_orient=("z_orient", "mean"),
+        median_z_shared=("z_shared", "median"),
+        median_z_orient=("z_orient", "median"),
     ).reset_index()
 
     summary_path = output_dir / "taucore_v11_overall_summary.csv"
@@ -93,8 +95,13 @@ def run_classifier(v8_csv, v10_csv, output_dir):
     return audit_path, summary_path
 
 if __name__ == "__main__":
-    run_classifier(
-        v8_csv="../results/tables/taucore_v8_stability_audit.csv",
-        v10_csv="../results/tables/taucore_v10_orientation_audit.csv",
-        output_dir="../results/tables/",
+    repo_root = Path(__file__).resolve().parents[1]
+    derived_dir = repo_root / "data" / "derived"
+    legacy_dir = Path(__file__).resolve().parent.parent / "results" / "tables"
+    table_dir = derived_dir if (derived_dir / "taucore_v8_stability_audit.csv").exists() else legacy_dir
+    audit_path, summary_path = run_classifier(
+        v8_csv=table_dir / "taucore_v8_stability_audit.csv",
+        v10_csv=table_dir / "taucore_v10_orientation_audit.csv",
+        output_dir=table_dir,
     )
+    print(f"Wrote {audit_path} and {summary_path}")

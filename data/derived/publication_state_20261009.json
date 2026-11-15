@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-09",
+  "manuscripts": [
+    {
+      "source": "paper17_submission_source/main.tex",
+      "role": "calibration",
+      "source_sha256": "c3d247e9440f295bd0b9a50c221caeeb123892b03fbe3c618fd4c2ae04894727"
+    }
+  ],
+  "empirical_scores_changed": false,
+  "nature_occupation_proved": false,
+  "tau_specific_evidence": false,
+  "mass_candidate_retained": true,
+  "owners": {
+    "OIR1": "https://github.com/tau-core-research/tau-core-quantum-readout-foundation-paper-vi/blob/main/paperVI_submission_source/main.pdf#nameddest=oir1",
+    "MSI1": "https://github.com/tau-core-research/tau-core-higgs-module-paper4/blob/main/paper4_full_derivation/full_derivation.pdf#nameddest=msi1"
+  },
+  "canonical_hub": "https://github.com/tau-core-research/tau-core-theory/blob/main/docs/tau_core_seed_base_inverse_identifiability_and_constant_provenance_001.md",
+  "interpretation": "conditional completion and applicability audit"
+}

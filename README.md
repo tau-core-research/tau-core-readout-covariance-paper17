@@ -142,22 +142,6 @@ Claim marker: synthetic methodology only; not empirical validation; not physical
   correlations should be reported as morphology/orientation support unless
   they also survive the `Z_shared` common-parent covariance axis.
 
-<!-- BEGIN OBSERVER UPDATE 20260914 -->
-## Observer realization update (2026-09-14)
+## Upstream Ownership, Inherited Results, and Scope Boundary
 
-Different terminal labels are not independent information sources without a factorization or novelty proof. A nonzero correlation is not automatically a standard-orthogonal Tau signal.
-
-The manuscript distinguishes inherited BRAC contact, conditional coherent-state
-selection and interacting local covariance from physical observer identification,
-preparation and stable resolution. Those physical claims remain open. No
-empirical score was changed. The [dependency and source-result ledger](data/derived/observer_update_2026_09_14.json) records the assumptions and controls.
-<!-- END OBSERVER UPDATE 20260914 -->
-
-<!-- BEGIN LAB UPDATE 20260915 -->
-## Finite lab integration (2026-09-15)
-
-The manuscript imports the scope-specific source, body, observer or terminal
-result from the current lab. Supplied priors, conditional recovery and physical
-selection remain separate. No SI constant, viable universe or Tau-specific
-signal is newly established. See the [source and ownership ledger](data/derived/lab_update_2026_09_15.json).
-<!-- END LAB UPDATE 20260915 -->
+Within the Tau Core series (Foundation Papers I and III, Foundation IV / TD-0, Foundation V, [Paper 4 / Paper V CPR1 v1.0](https://github.com/tau-core-research/tau-core-higgs-module-paper4/blob/main/paper4_full_derivation/full_derivation.pdf#nameddest=cpr1) and [MSI1 v1.0](https://github.com/tau-core-research/tau-core-higgs-module-paper4/blob/main/paper4_full_derivation/full_derivation.pdf#nameddest=msi1), and [Foundation VI / Paper VII-A OIR1 v1.0](https://github.com/tau-core-research/tau-core-quantum-readout-foundation-paper-vi/blob/main/paperVI_submission_source/main.pdf#nameddest=oir1)), this repository owns only the synthetic `(Z_shared, Z_orient)` readout-covariance classifier. Different terminal labels are not independent information sources without a factorization proof, covariance or identical POVM output effects do not fix postmeasurement state updates or select physical source occupation, and SI/clock calibration plus operational stable quantizer `Q_OS` remain open; no frozen synthetic score is changed ([observer_update_2026_09_14.json](data/derived/observer_update_2026_09_14.json), [lab_update_2026_09_15.json](data/derived/lab_update_2026_09_15.json), [publication_state_20261009.json](data/derived/publication_state_20261009.json)).
